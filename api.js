@@ -1,11 +1,13 @@
-// TODO:    Haal alle fouten uit de scripts.
-//          Fouten zijn niet alleen beperkt tot var, let o const!
-//          maar ook bijvoorbeeld de afsluiting van een statement
-//          een komma die verkeerd staat, of variabelen die niet
-//          bekend zijn.
+// TODO:   gedaan
+
 
 let results = [];
-let items, coordinates, address = [];
+let items = [];
+let coordinates = [];
+let address = [];
+let id = [];
+let email = [];
+let street = [];
 
 function users(items) {
     for (let count = 0; count < items.length; count++) {
@@ -13,16 +15,20 @@ function users(items) {
         item = new Name(items[count].name);
         coordinates = new Coordinates(items[count].location.coordinates);
         address = new Address(items[count].location);
+        email = new Email(items[count].email);
+        street = new Street(items[count].location);
+        id = new Id(items[count].id);
+
     }
     console.table(item);
     console.table(coordinates);
-    console.table(address.showStreet());
+    console.table(address.street);
 
     // TODO:    Zorg ervoor dat de volgende statements resultaat gaan opleveren
     //          Hiervoor moet je de functie showAddress() afmaken en de constructors voor de
     //          objecten id, email, street en adrress aanmaken.
 
-    console.log(address.showAddress());
+    console.log(address);
     console.table(id);
     console.table(email);
     console.table(street);
@@ -33,7 +39,7 @@ function createGetRequest(url, callBack) {
 
     let request = new XMLHttpRequest()
 
-    request.onreadystatechange = function() {
+    request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
 
             let response = JSON.parse(this.response)

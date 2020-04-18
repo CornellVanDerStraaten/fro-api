@@ -22,6 +22,20 @@ function Name(item) {
     nameObj.first = item.first;
     nameObj.last = item.last;
 }
+function Id(item) {
+    idObj = this;
+    idObj.id = item;
+}
+
+function Email(item) {
+    let emailObject = this;
+    emailObject.email = item;
+}
+
+function Street(item) {
+    streetObj = this;
+    streetObj.street = item.street;
+}
 
 function Coordinates(item) {
     locationObject = this;
@@ -32,11 +46,12 @@ function Coordinates(item) {
 function Address(item) {
     addressObj = this;
     addressObj.street = item.street;
+    addressObj.city = item.city;
+    addressObj.state = item.state;
+    addressObj.country = item.country;
+    addressObj.postcode = item.postcode;
 
-    // TODO:    maak de constructor voor address af,
-    //          het object bevat meerdere objecten.
-    //          Het adres bestaat uit de onderdelen
-    //          street, city, state, country, postcode
+   // TODO AF
 
     addressObj.showStreet = function() {
         console.log(
@@ -45,10 +60,13 @@ function Address(item) {
     };
 
     addressObj.showAddress = function() {
-        // TODO:    Maak de functie af zodat alle informatie
-        //          van het adres getoond wordt. Dus street
-        //          city, state, country, postcode
-    }
+        console.log(
+            addressObj.city,
+            addressObj.state,
+            addressObj.country,
+            addressObj.postcode);
+        // TODO: AF 
+    };
 }
 
 // TODO:    Maak de ontbrekende objecten voor
