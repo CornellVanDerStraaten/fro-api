@@ -1,13 +1,8 @@
 // TODO:   gedaan
 
-
 let results = [];
-let items = [];
-let coordinates = [];
-let address = [];
-let id = [];
-let email = [];
-let street = [];
+let items, coordinates, address, id, email, street = {};
+
 
 function users(items) {
     for (let count = 0; count < items.length; count++) {
@@ -27,7 +22,6 @@ function users(items) {
     // TODO:    Zorg ervoor dat de volgende statements resultaat gaan opleveren
     //          Hiervoor moet je de functie showAddress() afmaken en de constructors voor de
     //          objecten id, email, street en adrress aanmaken.
-
     console.log(address);
     console.table(id);
     console.table(email);
@@ -52,7 +46,7 @@ function createGetRequest(url, callBack) {
         'GET',
         url,
         true
-    )
+    );
 
     request.send()
 }
