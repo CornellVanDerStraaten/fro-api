@@ -91,6 +91,21 @@ function Address(item) {
     addressObj.state = item.state;
     addressObj.country = item.country;
     addressObj.postcode = item.postcode;
+    addressObj.showStreet = function() {
+            console.log(
+                addressObj.street.name,
+                addressObj.street.number);
+        };
+
+        addressObj.showAddress = function() {
+            console.log(
+                addressObj.city,
+                addressObj.state,
+                addressObj.country,
+                addressObj.postcode);
+            // TODO: AF 
+        };
+
 }
 function Picture(item) {
     let pictureObj = this;
@@ -100,20 +115,7 @@ function Picture(item) {
     }
    // TODO AF
 
-    addressObj.showStreet = function() {
-        console.log(
-            addressObj.street.name,
-            addressObj.street.number);
-    };
-
-    addressObj.showAddress = function() {
-        console.log(
-            addressObj.city,
-            addressObj.state,
-            addressObj.country,
-            addressObj.postcode);
-        // TODO: AF 
-    };
+    
 
 
 // TODO:    Maak de ontbrekende objecten voor
